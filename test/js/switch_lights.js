@@ -1,5 +1,21 @@
 describe('On a 1x1 grid', function() {
-    it('I can turn on one light');
+    it('I can turn on one light', function() {
+        var grid = new Grid(1, 1);
+
+        var processor = new Processor(
+            new GridManager(grid),
+            new InstructionParser()
+        );
+
+        var instruction = new Instruction('ON', {x: 0, y: 0}, {x: 0, y: 0});
+        var instructions = [instruction];
+
+        processor.processInstructions(instructions);
+
+        var light = grid.getLightAtPos(0, 0);
+
+        expect(light.status).toEqual('ON');
+    });
 
     it('I can turn off one light');
 

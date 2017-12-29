@@ -55,3 +55,7 @@ The command is in the form "turn-on 0,0 to 0,0", "turn-off 0,0 to 0,0".
 * on a 2x2 grid, the command now is in the form "turn on 0,0 to 0,1"
 
 #### Story 3 - several lights
+
+### Notes
+
+It took two hours to build the walking skeleton
