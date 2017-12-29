@@ -28,3 +28,30 @@ For example:
 
 * turn on 0,0 through 0,0 would increase the total brightness by 1.
 * toggle 0,0 through 999,999 would increase the total brightness by 2000000.
+
+## Work plan
+
+Each step should be done within 30 minutes (1 pomodoro).
+
+### GOAL 1: a js application that receives a grid of lights, does some operations on the grid, and returns a modified grid
+
+#### Story 1 - a single light, single command
+
+Using outside-in tdd, build a system with a 1x1 grid, a commands sequence of only one command.
+The command is in the form "turn-on 0,0 to 0,0", "turn-off 0,0 to 0,0".
+
+* build the grid, each element is a light. I must be able to access to a set of light within the grid, using coordinates (in this case I can only use 0,0)
+
+* implement the light behavior - turn on
+
+* light behavior - turn off
+
+* light behavior - toggle
+
+* think about design: do I need to change something? Why? How?
+
+#### Story 2 - several lights, single command
+
+* on a 2x2 grid, the command now is in the form "turn on 0,0 to 0,1"
+
+#### Story 3 - several lights
