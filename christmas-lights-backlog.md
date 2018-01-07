@@ -32,30 +32,26 @@ For example:
 ## Work plan
 
 Each step should be done within 30 minutes (1 pomodoro).
+The walking skeleton is bound to take more than a pomodoro.
 
-### GOAL 1: a js application that receives a grid of lights, does some operations on the grid, and returns a modified grid
+First version will use a light_v1 object, where the turnOn command means modify its status to ON, turnOff modifies its status to OFF, etc.
+Each end to end test will use these light_v1 objects, and will check their status property.
 
-#### Story 1 - a single light, single command
+Second version will use a light_v2 object, where turnOn means to increase brightness level by 1, turnOff decrease brightness by 1, etc.
+End to end tests for this version will use light_v2 objects, and will check their brightness property.
 
-Using outside-in tdd, build a system with a 1x1 grid, a commands sequence of only one command.
-The command is in the form "turn-on 0,0 to 0,0", "turn-off 0,0 to 0,0".
+light_v1 and light_v2 have the same methods, however their behavior is different.
 
-* build the grid, each element is a light. I must be able to access to a set of light within the grid, using coordinates (in this case I can only use 0,0)
+This way, I don't have to rewrite existing tests, because I write new ones using different versions of light.
 
-* implement the light behavior - turn on
+### GOAL 1: walking skeleton
 
-* light behavior - turn off
+### GOAL 2: app with lights version 1
 
-* light behavior - toggle
+### GOAL 3: app with lights version 2
 
-* think about design: do I need to change something? Why? How?
 
-#### Story 2 - several lights, single command
-
-* on a 2x2 grid, the command now is in the form "turn on 0,0 to 0,1"
-
-#### Story 3 - several lights
 
 ### Notes
 
-It took two hours to build the walking skeleton
+Spike required: in js how do I tell the grid to populate itself with lights objects that re instances of light_v1??
