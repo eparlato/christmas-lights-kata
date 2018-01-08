@@ -1,18 +1,21 @@
 function Grid(tot_cols, tot_rows, light_obj) {
     
-    this.lights = [tot_cols][tot_rows];
+    this.lights = [];
 
-    var col;
+    var c;
     var row;
+	var r;
 
-    for (col = 0; col < tot_cols; col++) {
-        for (row = 0; row < tot_rows; row++) {
-            this.lights[col][row] = new light_obj();
+    for (c = 0; c < tot_cols; c++) {
+		row = [];
+        for (r = 0; r < tot_rows; r++) {
+            row.push(new light_obj());
         }
+		this.lights.push(row);
     }
 
     this.getLightAtPos = function(column_pos, row_pos) {
-        return this.lights[column_pos][row_pos];
+        return this.lights[column_pos - 1 ][row_pos - 1];
     };
 
 }
@@ -28,4 +31,8 @@ function LightOn() {
 var grid = new Grid(1, 1, LightOff);
 var light = grid.getLightAtPos(1,1);
 
+console.log('light is ' + light.status);
+
+grid = new Grid(1, 1, LightOn);
+light = grid.getLightAtPos(1,1);
 console.log('light is ' + light.status);
