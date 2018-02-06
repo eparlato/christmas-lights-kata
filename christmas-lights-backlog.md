@@ -46,6 +46,10 @@ This way, I don't have to rewrite existing tests, because I write new ones using
 
 ### GOAL 1: walking skeleton
 
+Write a 1x1 grid with a light. The grid creates itself. The light is off.
+Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
+Send the command sequence to the application, verify that the light status at pos [0, 0] is ON.
+
 ### GOAL 2: app with lights version 1
 
 ### GOAL 3: app with lights version 2
@@ -53,5 +57,3 @@ This way, I don't have to rewrite existing tests, because I write new ones using
 
 
 ### Notes
-
-Spike required: in js how do I tell the grid to populate itself with lights objects that are instances of light_v1?
