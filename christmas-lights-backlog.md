@@ -54,4 +54,4 @@ This way, I don't have to rewrite existing tests, because I write new ones using
 
 ### Notes
 
-Spike required: in js how do I tell the grid to populate itself with lights objects that re instances of light_v1??
+Spike required: in js how do I tell the grid to populate itself with lights objects that are instances of light_v1?
