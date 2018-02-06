@@ -28,7 +28,11 @@ function LightOn() {
     this.status = 'ON';
 }
 
-var grid = new Grid(1, 1, LightOn);
-var light = grid.getLightAtPos(0,0);
+var grid = new Grid(1, 1, LightOff);
+var light = grid.getLightAtPos(0, 0);
 
+console.log('light is ' + light.status);
+
+grid = new Grid(1, 1, LightOn);
+light = grid.getLightAtPos(0, 0);
 console.log('light is ' + light.status);
