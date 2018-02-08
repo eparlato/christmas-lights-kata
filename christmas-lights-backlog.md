@@ -50,7 +50,14 @@ Write a 1x1 grid with a light. The grid creates itself. The light is off.
 Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
 Send the command sequence to the application, verify that the light status at pos [0, 0] is ON.
 
+Pomodoro used : XXX
+
 ### GOAL 2: app with lights version 1
+
+Manage the TOGGLE case. Do I need a new object to deal with different command types?
+Implement ON/OFF command cases.
+Send a command on several lights, suchs as TOGGLE 0,0 -> 2,2.
+Send a sequence of commands, each command on several lights.
 
 ### GOAL 3: app with lights version 2
 
@@ -59,3 +66,17 @@ Send the command sequence to the application, verify that the light status at po
 Manager.getLights()
 
 ### Notes 
+
+I can't simply cal light.setStatus from the grid. What if the command is TOGGLE?
+
+CommandProcessor becomes CommandParser. CommandParser parses the command sequence, and creates a sequence of LightCommand objects. 
+Each LightCommand is a LightCommandTurnOn, LightCommandToggle, LightCommandWhatever object.
+Each LightCommand controls a group of lights.
+
+The sequence of LightCommands is sent to a new CommandProcessor object.
+CommandProcessor iterates over a sequence of LightCommands, and executes each command on a Grid.
+
+### Questions
+
+* In the early steps of the development of the app, seems convenient to just rely on end-to-end tests. If I develop each single part in TDD from step one, and I later discover that I need to change the architecture, introduce new objects or whatever, I need to change the tests all well. If I rely on end-to-end test I can modify the architecture more easily.
+How to deal with this problem?
