@@ -54,6 +54,8 @@ Send the command sequence to the application, verify that the light status at po
 
 ### GOAL 3: app with lights version 2
 
+### TODO
 
+Manager.getLights()
 
-### Notes
+### Notes 
