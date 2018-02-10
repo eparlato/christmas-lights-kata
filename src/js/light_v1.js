@@ -1,8 +1,12 @@
 function LightV1() {
 
-    this.status = 'OFF';
+    var status = 'OFF';
 
-    this.setStatus = function (status) {
-        this.status = status;
+    this.setStatus = function (newStatus) {
+        status = newStatus;
+    };
+
+    this.getStatus = function() {
+        return status;
     };
 }

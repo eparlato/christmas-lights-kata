@@ -23,6 +23,7 @@ describe('Walking skeleton: on a 1x1 grid', function() {
 
         var lights = manager.getLights(0, 0, 0, 0);
         
-        expect(lights[0].status).toEqual('ON');
+        expect(lights[0].getStatus()).toEqual('ON');
     });
-}); 
+});
+

@@ -57,15 +57,15 @@ Pomodoro used : XXX
 Create a new object to deal with different type of commands. XX
 Manage the TOGGLE case. 
 Implement ON/OFF command cases.
-Send a command on several lights, suchs as TOGGLE 0,0 -> 2,2.
+Send a command on several lights, such as TOGGLE 0,0 -> 2,2.
 Send a sequence of commands, each command on several lights.
 Send an empty sequence of commands.
 
 ### GOAL 3: app with lights version 2
 
 ### TODO
-
-Manager.getLights()
+Complete Manager.getLights(). It shouldn't return lights, it should return a matrix of light status.
+E2E: when I send a toggle command on a light that is on, that light becomes off.
 
 ### Notes 
 
