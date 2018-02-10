@@ -2,7 +2,7 @@ function Grid(tot_rows, tot_columns, light) {
 
     var lights = [];
 
-    function make() {
+    function build() {
         var col;
         var row;
         var innerArray;
@@ -33,5 +33,5 @@ function Grid(tot_rows, tot_columns, light) {
         }
     };
 
-    make();
+    build();
 }

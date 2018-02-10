@@ -1,5 +1,6 @@
-function CommandOff(from, to) {
+function Toggle(from, to) {
     
     this.execute = function(grid) {
+
     };
 }

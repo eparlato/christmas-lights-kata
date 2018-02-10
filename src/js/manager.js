@@ -1,9 +1,9 @@
-function Manager(grid, commandParser, commandProcessor) {
+function Manager(grid, commandParser, lightActionProcessor) {
 
-    this.process = function (commands) {
-        var commandObjs = commandParser.parse(commands);
+    this.process = function (commandSequence) {
+        var lightActions = commandParser.parse(commandSequence);
 
-        commandProcessor.process(commandObjs, grid);
+        lightActionProcessor.process(lightActions, grid);
     };
 
     this.getLights = function(from_row, from_column, to_row, to_column) {

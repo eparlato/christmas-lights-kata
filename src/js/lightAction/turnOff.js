@@ -1,6 +1,5 @@
-function CommandToggle(from, to) {
+function TurnOff(from, to) {
     
     this.execute = function(grid) {
-
     };
 }

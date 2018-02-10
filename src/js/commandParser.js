@@ -1,27 +1,27 @@
 function CommandParser() {
-    this.parse = function (commands) {
+    this.parse = function (commandSequence) {
 
-        var commandObjs = [];
+        var lightActions = [];
 
-        commands.forEach(function(command) {
-            commandObjs.push(parseCommand(command));
+        commandSequence.forEach(function(command) {
+            lightActions.push(parseCommand(command));
         });
 
-        return commandObjs;
+        return lightActions;
     };
 
     function parseCommand(command) {
-        var commandObj;
+        var lightAction;
 
         // TODO: is it possible to remove ifs and have the same behaviour?
         if (command.action === 'ON') {
-            commandObj = new CommandOn(command.from, command.to);
+            lightAction = new TurnOn(command.from, command.to);
         } else if (command === 'OFF') {
-            commandObj = new CommandOff(command.from, command.to);
+            lightAction = new TurnOff(command.from, command.to);
         } else {
-            commandObj = new CommandToggle(command.from, command.to);
+            lightAction = new Toggle(command.from, command.to);
         }
 
-        return commandObj;
+        return lightAction;
     }
 }
