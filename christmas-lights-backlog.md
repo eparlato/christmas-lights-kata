@@ -54,10 +54,12 @@ Pomodoro used : XXX
 
 ### GOAL 2: app with lights version 1
 
-Manage the TOGGLE case. Do I need a new object to deal with different command types?
+Create a new object to deal with different type of commands. XX
+Manage the TOGGLE case. 
 Implement ON/OFF command cases.
 Send a command on several lights, suchs as TOGGLE 0,0 -> 2,2.
 Send a sequence of commands, each command on several lights.
+Send an empty sequence of commands.
 
 ### GOAL 3: app with lights version 2
 
@@ -67,11 +69,11 @@ Manager.getLights()
 
 ### Notes 
 
-I can't simply cal light.setStatus from the grid. What if the command is TOGGLE?
+I can't simply call light.setStatus from the grid. What if the command is TOGGLE?
 
 CommandProcessor becomes CommandParser. CommandParser parses the command sequence, and creates a sequence of LightCommand objects. 
 Each LightCommand is a LightCommandTurnOn, LightCommandToggle, LightCommandWhatever object.
-Each LightCommand controls a group of lights.
+Each LightCommand controls a group of lights. It is built with a from/to coordinates pair, it is executed on a Grid.
 
 The sequence of LightCommands is sent to a new CommandProcessor object.
 CommandProcessor iterates over a sequence of LightCommands, and executes each command on a Grid.

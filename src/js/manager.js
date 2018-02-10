@@ -1,7 +1,9 @@
-function Manager(grid, commandProcessor) {
+function Manager(grid, commandParser, commandProcessor) {
 
     this.process = function (commands) {
-        commandProcessor.execute(commands, grid);
+        var commandObjs = commandParser.parse(commands);
+
+        commandProcessor.process(commandObjs, grid);
     };
 
     this.getLights = function(from_row, from_column, to_row, to_column) {

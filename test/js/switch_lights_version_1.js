@@ -1,8 +1,8 @@
 describe('Walking skeleton: on a 1x1 grid', function() {
     it('when I send a ON command on a single light, that light is turned on', function() {
         var grid = new Grid(1, 1, LightV1);
+        var commandParser = new CommandParser();
         var commandProcessor = new CommandProcessor();
-
         var commands = [
             {
                 from: { 
@@ -17,7 +17,7 @@ describe('Walking skeleton: on a 1x1 grid', function() {
             }
         ];
 
-        var manager = new Manager(grid, commandProcessor);
+        var manager = new Manager(grid, commandParser, commandProcessor);
 
         manager.process(commands);
 

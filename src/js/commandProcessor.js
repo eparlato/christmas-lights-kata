@@ -1,12 +1,12 @@
 function CommandProcessor() {
-    this.execute = function (commands, grid) {
+    this.process = function(commands, grid) {
 
         commands.forEach(function(command) {
-            parseCommand(command, grid);
+            processCommand(command, grid);
         });
     };
 
-    function parseCommand(command, grid) {
-        grid.setLightsStatus(command.from.row, command.from.column, command.to.row, command.to.column, command.action);
+    function processCommand(command, grid) {
+        command.execute(grid);
     }
 }
