@@ -18,19 +18,33 @@ function Grid(tot_rows, tot_columns, light) {
         }
     } 
 
-    this.getLightAtPos = function(row_pos, column_pos) {
-        return lights[row_pos][column_pos];
-    };
-
-    this.setLightsStatus = function(from_row, from_column, to_row, to_column, status) {
+    this.setLightStatus = function(from_row, from_column, to_row, to_column, status) {
         var r;
         var c;
 
-        for(r = from_row; r <= to_row; r++) {
+        for (r = from_row; r <= to_row; r++) {
             for (c = from_column; c <= to_column; c++) {
                 lights[r][c].setStatus(status);
             }
         }
+    };
+
+    this.getLightStatus = function(from_row, from_column, to_row, to_column) {
+        var status = [];
+        var r;
+        var c;
+        var innerArray;
+
+        for (r = from_row; r <= to_row; r++) {
+            innerArray = [];
+            for (c = from_column; c <= to_column; c++) {
+                innerArray.push(lights[r][c].getStatus());
+            }
+
+            status.push(innerArray);
+        }
+
+        return status;
     };
 
     build();

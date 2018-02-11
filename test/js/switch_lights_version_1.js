@@ -21,9 +21,8 @@ describe('Walking skeleton: on a 1x1 grid', function() {
 
         manager.process(commandSequence);
 
-        var lights = manager.getLights(0, 0, 0, 0);
-        
-        expect(lights[0].getStatus()).toEqual('ON');
+        var statusOfLight = manager.getLightStatus(0, 0, 0, 0);
+        expect(statusOfLight[0][0]).toEqual('ON');
     });
 });
 
