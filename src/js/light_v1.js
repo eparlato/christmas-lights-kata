@@ -3,7 +3,17 @@ function LightV1() {
     var status = 'OFF';
 
     this.setStatus = function (newStatus) {
-        status = newStatus;
+        
+        if (newStatus === 'TOGGLE') {
+            if (status === 'OFF') {
+                status = 'ON';
+            } else {
+                status = 'OFF';
+            }
+        } else {
+            status = newStatus;
+        }
+
     };
 
     this.getStatus = function() {

@@ -55,11 +55,12 @@ Pomodoro used : XXX
 ### GOAL 2: app with lights version 1
 
 Create a new object to deal with different type of commands. XX
-Manage the TOGGLE case. 
-Implement ON/OFF command cases.
-Send a command on several lights, such as TOGGLE 0,0 -> 2,2.
-Send a sequence of commands, each command on several lights.
+Manage the TOGGLE case on a 1x1 grid. X
 Send an empty sequence of commands.
+Implement ON/OFF command cases on a 1x1 grid.
+Send a sequence of commands on a 1x1 grid.
+Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2.
+Send a sequence of commands on a 4x4 grid.
 
 ### GOAL 3: app with lights version 2
 
@@ -69,14 +70,10 @@ E2E: when I send a toggle command on a light that is on, that light becomes off.
 
 ### Notes 
 
-I can't simply call light.setStatus from the grid. What if the command is TOGGLE?
-
-CommandProcessor becomes CommandParser. CommandParser parses the command sequence, and creates a sequence of LightCommand objects. 
-Each LightCommand is a LightCommandTurnOn, LightCommandToggle, LightCommandWhatever object.
-Each LightCommand controls a group of lights. It is built with a from/to coordinates pair, it is executed on a Grid.
-
-The sequence of LightCommands is sent to a new CommandProcessor object.
-CommandProcessor iterates over a sequence of LightCommands, and executes each command on a Grid.
+I don't need lightAction ojects anymore. I'm going to move the light action on the light object itself. 
+Grid.setLightStatus becomes Grid.launchCommandOnLights()
+Build a new CommandProcessor object. It parses the command sequence, for each command launches grid.launchCommandOnLights().
+Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in he next version of the app I have only to use a different Light object.
 
 ### Questions
 
