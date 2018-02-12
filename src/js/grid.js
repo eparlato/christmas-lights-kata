@@ -18,13 +18,13 @@ function Grid(tot_rows, tot_columns, light) {
         }
     } 
 
-    this.setLightStatus = function(from_row, from_column, to_row, to_column, status) {
+    this.launchCommand = function (command) {
         var r;
         var c;
 
-        for (r = from_row; r <= to_row; r++) {
-            for (c = from_column; c <= to_column; c++) {
-                lights[r][c].setStatus(status);
+        for (r = command.from.row; r <= command.to.row; r++) {
+            for (c = command.from.column; c <= command.to.column; c++) {
+                lights[r][c].execute(command.action);
             }
         }
     };

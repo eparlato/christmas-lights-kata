@@ -2,7 +2,7 @@ describe('Walking skeleton: on a 1x1 grid', function() {
     it('when I send a ON command on a single light, that light is turned on', function() {
         var grid = new Grid(1, 1, LightV1);
         var commandParser = new CommandParser();
-        var lightActionProcessor = new LightActionProcessor();
+        var commandProcessor = new CommandProcessor();
         var commandSequence = [
             {
                 from: { 
@@ -17,7 +17,7 @@ describe('Walking skeleton: on a 1x1 grid', function() {
             }
         ];
 
-        var manager = new Manager(grid, commandParser, lightActionProcessor);
+        var manager = new Manager(grid, commandParser, commandProcessor);
 
         manager.process(commandSequence);
 
@@ -29,7 +29,7 @@ describe('Walking skeleton: on a 1x1 grid', function() {
 describe('On a 1x1 grid', function() {
     var grid;
     var commandParser;
-    var lightActionProcessor;
+    var commandProcessor;
     var commandSequence;
     var manager;
 
@@ -38,8 +38,8 @@ describe('On a 1x1 grid', function() {
     beforeEach(function() {
         grid = new Grid(1, 1, LightV1);
         commandParser = new CommandParser();
-        lightActionProcessor = new LightActionProcessor();
-        manager = new Manager(grid, commandParser, lightActionProcessor);
+        commandProcessor = new CommandProcessor();
+        manager = new Manager(grid, commandParser, commandProcessor);
     });
     
     it('if I send a TOGGLE command on a ON light, that light is switched off', function() {
@@ -56,7 +56,20 @@ describe('On a 1x1 grid', function() {
             action: 'TOGGLE'
         }];
 
-        grid.setLightStatus(0, 0, 0, 0, 'ON');
+        var commandOn = {
+            from: { 
+                row: 0, 
+                column: 0
+            },
+            to: {
+                row: 0,
+                column: 0
+            },
+            action: 'ON'
+        };
+        
+        grid.launchCommand(commandOn);
+
 
         manager.process(commandSequence);
 

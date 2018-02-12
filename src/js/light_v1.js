@@ -2,21 +2,21 @@ function LightV1() {
 
     var status = 'OFF';
 
-    this.setStatus = function (newStatus) {
-        
-        if (newStatus === 'TOGGLE') {
+    this.execute = function (action) {
+
+        if (action === 'TOGGLE') {
             if (status === 'OFF') {
                 status = 'ON';
             } else {
                 status = 'OFF';
             }
         } else {
-            status = newStatus;
+            status = action;
         }
 
     };
 
-    this.getStatus = function() {
+    this.getStatus = function () {
         return status;
     };
 }

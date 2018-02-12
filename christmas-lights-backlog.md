@@ -61,6 +61,7 @@ Implement ON/OFF command cases on a 1x1 grid.
 Send a sequence of commands on a 1x1 grid.
 Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2.
 Send a sequence of commands on a 4x4 grid.
+Refactoring: XXX
 
 ### GOAL 3: app with lights version 2
 
@@ -73,7 +74,7 @@ E2E: when I send a toggle command on a light that is on, that light becomes off.
 I don't need lightAction ojects anymore. I'm going to move the light action on the light object itself. 
 Grid.setLightStatus becomes Grid.launchCommandOnLights()
 Build a new CommandProcessor object. It parses the command sequence, for each command launches grid.launchCommandOnLights().
-Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in he next version of the app I have only to use a different Light object.
+Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in the next version of the app I have only to use a different Light object.
 
 ### Questions
 
