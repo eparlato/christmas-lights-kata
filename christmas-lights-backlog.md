@@ -56,9 +56,8 @@ Pomodoro used : XXX
 
 Create a new object to deal with different type of commands. XX
 Manage the TOGGLE case on a 1x1 grid. X
+Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. Xb
 Send an empty sequence of commands.
-Implement ON/OFF command cases on a 1x1 grid.
-Send a sequence of commands on a 1x1 grid.
 Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2.
 Send a sequence of commands on a 4x4 grid.
 Refactoring: XXX

@@ -53,10 +53,8 @@ describe('On a 1x1 grid', function() {
                 row: 0,
                 column: 0
             },
-            action: 'TOGGLE'
-        }];
-
-        var commandOn = {
+            action: 'ON'
+        },{
             from: { 
                 row: 0, 
                 column: 0
@@ -65,11 +63,8 @@ describe('On a 1x1 grid', function() {
                 row: 0,
                 column: 0
             },
-            action: 'ON'
-        };
-        
-        grid.launchCommand(commandOn);
-
+            action: 'TOGGLE'
+        }];
 
         manager.process(commandSequence);
 

@@ -4,6 +4,10 @@ function LightV1() {
 
     this.execute = function (action) {
 
+        if (action === undefined || action === '') {
+            return;
+        }
+
         if (action === 'TOGGLE') {
             if (status === 'OFF') {
                 status = 'ON';
