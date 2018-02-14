@@ -64,7 +64,7 @@ describe('On a 3x3 grid', function() {
             },
             to: {
                 row: 1,
-                column: 0
+                column: 2
             },
             action: 'TOGGLE'
         }];
@@ -77,6 +77,7 @@ describe('On a 3x3 grid', function() {
         expect(statusOfLight[0][0]).toEqual('ON');
         expect(statusOfLight[0][1]).toEqual('OFF');
         expect(statusOfLight[0][2]).toEqual('OFF');
-        expect(statusOfLight[1][0]).toEqual('ON');
+        expect(statusOfLight[1][1]).toEqual('ON');
+        expect(statusOfLight[1][2]).toEqual('ON');
     });
 });
