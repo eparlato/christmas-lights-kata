@@ -81,5 +81,53 @@ describe('On a 3x3 grid', function() {
         expect(statusOfLight[1][2]).toEqual('ON');
     });
 
+    it('I can send a sequence of commands', function() {
+
+        commandSequence = [
+            {
+                from: {
+                    row: 1,
+                    column: 0
+                },
+                to: {
+                    row: 2,
+                    column: 1
+                },
+                action: 'TOGGLE'
+            },
+            {
+                from: {
+                    row: 1,
+                    column: 1
+                },
+                to:{
+                    row: 2,
+                    column: 2
+                },
+                action: 'OFF'
+            },
+            {
+                from: {
+                    row: 2,
+                    column: 2
+                },
+                to: {
+                    row: 2,
+                    column: 2
+                },
+                action: 'ON'
+            }
+        ]; 
+
+        manager.process(commandSequence);
+
+        statusOfLight = manager.getLightStatus();
+
+        expect(statusOfLight[1][0]).toEqual('ON');
+        expect(statusOfLight[1][1]).toEqual('OFF');
+        expect(statusOfLight[2][0]).toEqual('ON');
+        expect(statusOfLight[2][1]).toEqual('OFF');
+        expect(statusOfLight[2][2]).toEqual('ON');
+    });
 
 });
