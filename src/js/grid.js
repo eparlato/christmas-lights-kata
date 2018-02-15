@@ -29,15 +29,15 @@ function Grid(tot_rows, tot_columns, light) {
         }
     };
 
-    this.getLightStatus = function(from_row, from_column, to_row, to_column) {
+    this.getLightStatus = function() {
         var status = [];
         var r;
         var c;
         var innerArray;
 
-        for (r = from_row; r <= to_row; r++) {
+        for (r = 0; r < lights[0].length; r++) {
             innerArray = [];
-            for (c = from_column; c <= to_column; c++) {
+            for (c = 0; c < lights[r].length; c++) {
                 innerArray.push(lights[r][c].getStatus());
             }
 

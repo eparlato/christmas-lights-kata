@@ -6,8 +6,8 @@ function Manager(grid, commandParser, commandProcessor) {
         commandProcessor.process(commands, grid);
     };
 
-    this.getLightStatus = function(from_row, from_column, to_row, to_column) {
-        return grid.getLightStatus(from_row, from_column, to_row, to_column);
+    this.getLightStatus = function() {
+        return grid.getLightStatus();
     };
 
 }

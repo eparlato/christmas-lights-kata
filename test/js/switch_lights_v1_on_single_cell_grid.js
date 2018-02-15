@@ -31,7 +31,7 @@ describe('On a 1x1 grid', function() {
 
         manager.process(commandSequence);
 
-        var statusOfLight = manager.getLightStatus(0, 0, 0, 0);
+        var statusOfLight = manager.getLightStatus();
         expect(statusOfLight[0][0]).toEqual('ON');
     });
     
@@ -61,7 +61,7 @@ describe('On a 1x1 grid', function() {
 
         manager.process(commandSequence);
 
-        statusOfLight = manager.getLightStatus(0, 0, 0, 0);
+        statusOfLight = manager.getLightStatus();
         expect(statusOfLight[0][0]).toEqual('OFF');
     });
 
@@ -71,7 +71,7 @@ describe('On a 1x1 grid', function() {
         manager.process([]);
         manager.process(null);
 
-        statusOfLight = manager.getLightStatus(0, 0, 0, 0);
+        statusOfLight = manager.getLightStatus();
         expect(statusOfLight[0][0]).toEqual('OFF');
     });
 });

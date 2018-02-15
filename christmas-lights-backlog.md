@@ -60,13 +60,12 @@ Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1
 Send an empty sequence of commands. X
 Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. X
 Send a sequence of commands on a 4x4 grid.
+Launch Santa's sequence.
 Refactoring: XXX
 
 ### GOAL 3: app with lights version 2
 
 ### TODO
-Complete Manager.getLights(). It shouldn't return lights, it should return a matrix of light status.
-E2E: when I send a toggle command on a light that is on, that light becomes off.
 
 ### Notes 
 
@@ -75,6 +74,7 @@ Grid.setLightStatus becomes Grid.launchCommandOnLights()
 Build a new CommandProcessor object. It parses the command sequence, for each command launches grid.launchCommandOnLights().
 Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in the next version of the app I have only to use a different Light object.
 
+Manager.getLightStatus should return the lights' status of the whole grid. Otherwise, I will receive a grid with status at different positions compared to the original grid.
 ### Questions
 
 * In the early steps of the development of the app, seems convenient to just rely on end-to-end tests. If I develop each single part in TDD from step one, and I later discover that I need to change the architecture, introduce new objects or whatever, I need to change the tests all well. If I rely on end-to-end test I can modify the architecture more easily.

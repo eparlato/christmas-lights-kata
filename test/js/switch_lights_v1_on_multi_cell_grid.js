@@ -29,7 +29,7 @@ describe('On a 3x3 grid', function() {
 
         manager.process(commandSequence);
 
-        statusOfLight = manager.getLightStatus(0, 0, 2, 2);
+        statusOfLight = manager.getLightStatus();
 
         expect(statusOfLight[0][0]).toEqual('OFF');
         expect(statusOfLight[0][1]).toEqual('OFF');
@@ -72,7 +72,7 @@ describe('On a 3x3 grid', function() {
         manager.process(commandSequence);
         manager.process(commandSequence2);
         
-        statusOfLight = manager.getLightStatus(0, 0, 1, 2);
+        statusOfLight = manager.getLightStatus();
 
         expect(statusOfLight[0][0]).toEqual('ON');
         expect(statusOfLight[0][1]).toEqual('OFF');
@@ -80,4 +80,6 @@ describe('On a 3x3 grid', function() {
         expect(statusOfLight[1][1]).toEqual('ON');
         expect(statusOfLight[1][2]).toEqual('ON');
     });
+
+
 });
