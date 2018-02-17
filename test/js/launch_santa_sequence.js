@@ -3,18 +3,8 @@ describe('On a 1000x1000 grid', function () {
     var grid;
     var commandParser;
     var commandProcessor;
-    var commandSequence;
     var manager;
-
-    it('I can launch the Santa\'s command sequence with version 1 lights', function () {
-        grid = new Grid(1000, 1000, LightV1);
-        commandParser = new CommandParser();
-        commandProcessor = new CommandProcessor();
-        manager = new Manager(grid, commandParser, commandProcessor);
-
-        var statusOfLight;
-
-        commandSequence = [{
+    var commandSequence_v1 = [{
             from: {
                 row: 0,
                 column: 0
@@ -45,23 +35,20 @@ describe('On a 1000x1000 grid', function () {
             },
             action: 'OFF'
         }
-        ];
+    ];
 
-        manager.process(commandSequence);
+    it('I can launch the Santa\'s sequence version 1 and get the total number of lit lights', function() {
+        grid = new Grid(1000, 1000, LightV1);
+        commandParser = new CommandParser();
+        commandProcessor = new CommandProcessor();
+        manager = new Manager(grid, commandParser, commandProcessor);
 
-        statusOfLight = manager.getLightStatus();
+        var total_lit_lights;
 
-        expect(statusOfLight[0][0]).toEqual('OFF');
-        expect(statusOfLight[0][1]).toEqual('ON');
-        expect(statusOfLight[245][0]).toEqual('OFF');
-        expect(statusOfLight[245][1]).toEqual('ON');
-        expect(statusOfLight[999][0]).toEqual('OFF');
-        expect(statusOfLight[999][1]).toEqual('ON');
-        expect(statusOfLight[499][498]).toEqual('ON');
-        expect(statusOfLight[499][499]).toEqual('OFF');
-        expect(statusOfLight[499][500]).toEqual('OFF');
-        expect(statusOfLight[500][499]).toEqual('OFF');
-        expect(statusOfLight[500][500]).toEqual('OFF');
-        expect(statusOfLight[999][999]).toEqual('ON');
+        manager.process(commandSequence_v1);
+
+        total_lit_lights = manager.getTotalLitLights();
+
+        expect(total_lit_lights).toEqual(998996);
     });
 });
