@@ -25,4 +25,8 @@ function Manager(grid, commandParser, commandProcessor) {
         
         return total_lit_lights;
     };
+
+    this.getTotalBrightness = function() {
+        return 0;
+    };
 }
