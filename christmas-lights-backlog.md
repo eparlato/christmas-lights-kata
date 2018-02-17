@@ -48,7 +48,7 @@ This way, I don't have to rewrite existing tests, because I write new ones using
 
 Write a 1x1 grid with a light. The grid creates itself. The light is off.
 Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
-Send the command sequence to the application, verify that the light status at pos [0, 0] is ON.
+Send the command sequence to the application, verify that the light status at pos [0, 0] is ON. 
 
 Pomodoro used : XXX
 
@@ -58,9 +58,8 @@ Create a new object to deal with different type of commands. XX
 Manage the TOGGLE case on a 1x1 grid. X
 Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. X
 Send an empty sequence of commands. X
-Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. X
-Send a sequence of commands on a 4x4 grid. 
-Launch Santa's sequence.
+Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. X
+Launch Santa's sequence. X
 Refactoring: XXXX
 
 ### GOAL 3: app with lights version 2
