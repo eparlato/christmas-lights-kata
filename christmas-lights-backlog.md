@@ -59,7 +59,7 @@ Manage the TOGGLE case on a 1x1 grid. X
 Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. X
 Send an empty sequence of commands. X
 Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. X
-Launch Santa's sequence. X
+Launch Santa's sequence. XX
 Refactoring: XXXX
 
 ### GOAL 3: app with lights version 2

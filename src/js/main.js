@@ -2,19 +2,7 @@
 
     var txt_total_lit_lights = document.getElementById("txt_total_lit_lights");
 
-    function go() {
-        var btn_launch_version1 = document.getElementById("btn_launch_version1");
-        btn_launch_version1.onclick = run_version_1;
-    }
-
-    function run_version_1() {
-        console.log("Launching version 1...");
-        
-        var grid = new Grid(1000, 1000, LightV1);
-        var commandParser = new CommandParser();
-        var commandProcessor = new CommandProcessor();
-        var manager = new Manager(grid, commandParser, commandProcessor);
-        var commandSequence = [{
+    var commandSequence = [{
             from: {
                 row: 0,
                 column: 0
@@ -46,6 +34,20 @@
             action: 'OFF'
         }
     ];
+
+    function go() {
+        var btn_launch_version1 = document.getElementById("btn_launch_version1");
+        btn_launch_version1.onclick = run_version_1;
+    }
+
+    function run_version_1() {
+        console.log("Launching version 1...");
+        
+        var grid = new Grid(1000, 1000, LightV1);
+        var commandParser = new CommandParser();
+        var commandProcessor = new CommandProcessor();
+        var manager = new Manager(grid, commandParser, commandProcessor);
+
 
         var total_lit_lights;
 
