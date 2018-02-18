@@ -33,4 +33,38 @@ describe('On a 1x1 grid', function() {
 
         expect(totalBrightness).toEqual(1);
     });
+
+    it('I can change the brightness level with a sequence of commands', function() {
+
+        commandSequence = [
+            {
+                from: { 
+                    row: 0, 
+                    column: 0
+                },
+                to: {
+                    row: 0,
+                    column: 0
+                },
+                action: 'TOGGLE'
+            },
+            {
+                from: { 
+                    row: 0, 
+                    column: 0
+                },
+                to: {
+                    row: 0,
+                    column: 0
+                },
+                action: 'TOGGLE'
+            }
+        ];
+
+        manager.process(commandSequence);
+
+        totalBrightness = manager.getTotalBrightness();
+
+        expect(totalBrightness).toEqual(4);
+    });
 });
