@@ -2,6 +2,10 @@
 
     var txt_total_lit_lights = document.getElementById("txt_total_lit_lights");
     var txt_total_brightness = document.getElementById("txt_total_brightness");
+    var grid;
+    var commandParser;
+    var commandProcessor;
+    var manager;
 
     var commandSequence = [{
             from: {
@@ -46,10 +50,10 @@
     function run_version_1() {
         console.log("Launching version 1...");
         
-        var grid = new Grid(1000, 1000, LightV1);
-        var commandParser = new CommandParser();
-        var commandProcessor = new CommandProcessor();
-        var manager = new Manager(grid, commandParser, commandProcessor);
+        grid = new Grid(1000, 1000, LightV1);
+        commandParser = new CommandParser();
+        commandProcessor = new CommandProcessor();
+        manager = new Manager(grid, commandParser, commandProcessor);
 
         var total_lit_lights;
 
@@ -63,10 +67,10 @@
     function run_version_2() {
         console.log('Launching version 2...');
 
-        var grid = new Grid(1000, 1000, LightV2);
-        var commandParser = new CommandParser();
-        var commandProcessor = new CommandProcessor();
-        var manager = new Manager(grid, commandParser, commandProcessor);
+        grid = new Grid(1000, 1000, LightV2);
+        commandParser = new CommandParser();
+        commandProcessor = new CommandProcessor();
+        manager = new Manager(grid, commandParser, commandProcessor);
 
         var total_brightness;
 
