@@ -1,6 +1,5 @@
 describe('If I use a light V1', function() {
     var light;
-    var status;
 
     beforeEach(function() {
         light = new LightV1();
