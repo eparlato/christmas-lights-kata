@@ -35,7 +35,7 @@ function Grid(tot_rows, tot_columns, light) {
         var c;
         var innerArray;
 
-        for (r = 0; r < lights[0].length; r++) {
+        for (r = 0; r < lights.length; r++) {
             innerArray = [];
             for (c = 0; c < lights[r].length; c++) {
                 innerArray.push(lights[r][c].getStatus());

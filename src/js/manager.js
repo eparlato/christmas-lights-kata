@@ -15,7 +15,7 @@ function Manager(grid, commandParser, commandProcessor) {
         var lightStatus = this.getLightStatus();
         
         var r, c;
-        for (r = 0; r < lightStatus[0].length; r++) {
+        for (r = 0; r < lightStatus.length; r++) {
             for (c = 0; c < lightStatus[r].length; c++ ) {
                 if (lightStatus[r][c] === 'ON') {
                     ++total_lit_lights;
