@@ -63,9 +63,8 @@ Launch Santa's sequence. XX
 Refactoring: XXXX
 
 ### GOAL 3: app with lights version 2
-Increase the total brightness of a 1x1 grid by 1;
-Launch a sequence of commands on a 1x1 grid and calculate the total brightness.
-Handle the ON/OFF/TOGGLE commands on a version 2 light.
+Increase the total brightness of a 1x1 grid by 1; X
+Handle the ON/OFF/TOGGLE commands on a version 2 light. \ Launch a sequence of commands on a 1x1 grid and calculate the total brightness. X
 Send a sequence of commands on a 4x4 grid and calculate the total brightness.
 Launch Santa's sequence and calculate the total brightness of the grid.
 
