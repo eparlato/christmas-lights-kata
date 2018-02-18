@@ -47,5 +47,19 @@ function Grid(tot_rows, tot_columns, light) {
         return status;
     };
 
+    this.getTotalBrightness = function() {
+       var total_brightness = 0;
+        var r;
+        var c;
+
+        for (r = 0; r < lights.length; r++) {
+            for (c = 0; c < lights[r].length; c++) {
+                total_brightness += lights[r][c].getBrightnessLevel();
+            }
+        }
+
+        return total_brightness;
+    };
+
     build();
 }

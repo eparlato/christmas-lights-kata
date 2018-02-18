@@ -27,6 +27,6 @@ function Manager(grid, commandParser, commandProcessor) {
     };
 
     this.getTotalBrightness = function() {
-        return 0;
+        return grid.getTotalBrightness();
     };
 }
