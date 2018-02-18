@@ -78,7 +78,10 @@ Build a new CommandProcessor object. It parses the command sequence, for each co
 Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in the next version of the app I have only to use a different Light object.
 
 Manager.getLightStatus should return the lights' status of the whole grid. Otherwise, I will receive a grid with status at different positions compared to the original grid.
+
+Total time spent: 18 pomodoros => 9h
+
 ### Questions
 
-* In the early steps of the development of the app, seems convenient to just rely on end-to-end tests. If I develop each single part in TDD from step one, and I later discover that I need to change the architecture, introduce new objects or whatever, I need to change the tests all well. If I rely on end-to-end test I can modify the architecture more easily.
+* In the early steps of the development of the app, seems convenient to just rely on end-to-end tests. If I develop each single part in TDD from step one, and I later discover that I need to change the architecture, introduce new objects or whatever, I need to change the tests as well. If I rely on end-to-end test I can modify the architecture more easily.
 How to deal with this problem?
