@@ -29,7 +29,15 @@ For example:
 * turn on 0,0 through 0,0 would increase the total brightness by 1.
 * toggle 0,0 through 999,999 would increase the total brightness by 2000000.
 
-## Work plan
+## How to run the tests
+
+Simply go to \test\js\jasmine and open SpecRunner.html
+
+## How to run the application
+
+Open main.html
+
+## Working plan
 
 First version will use a light_v1 object, where the turnOn command means modify its status to ON, turnOff modifies its status to OFF, etc.
 Each end to end test will use these light_v1 objects, and will check their status property.
@@ -51,7 +59,6 @@ Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1
 Send an empty sequence of commands. 
 Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. 
 Launch Santa's sequence. 
-
 
 ### GOAL 3: app with lights version 2
 Increase the total brightness of a 1x1 grid by 1; 
