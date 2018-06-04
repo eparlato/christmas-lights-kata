@@ -31,18 +31,11 @@ For example:
 
 ## Work plan
 
-Each step should be done within 30 minutes (1 pomodoro).
-The walking skeleton is bound to take more than a pomodoro.
-
 First version will use a light_v1 object, where the turnOn command means modify its status to ON, turnOff modifies its status to OFF, etc.
 Each end to end test will use these light_v1 objects, and will check their status property.
 
 Second version will use a light_v2 object, where turnOn means to increase brightness level by 1, turnOff decrease brightness by 1, etc.
 End to end tests for this version will use light_v2 objects, and will check their brightness property.
-
-light_v1 and light_v2 have the same methods, however their behavior is different.
-
-This way, I don't have to rewrite existing tests, because I write new ones using different versions of light.
 
 ### GOAL 1: walking skeleton
 
@@ -50,38 +43,18 @@ Write a 1x1 grid with a light. The grid creates itself. The light is off.
 Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
 Send the command sequence to the application, verify that the light status at pos [0, 0] is ON. 
 
-Pomodoro used : XXX
-
 ### GOAL 2: app with lights version 1
 
-Create a new object to deal with different type of commands. XX
-Manage the TOGGLE case on a 1x1 grid. X
-Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. X
-Send an empty sequence of commands. X
-Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. X
-Launch Santa's sequence. XX
-Refactoring: XXXX
+Create a new object to deal with different type of commands. 
+Manage the TOGGLE case on a 1x1 grid. 
+Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. 
+Send an empty sequence of commands. 
+Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. 
+Launch Santa's sequence. 
+
 
 ### GOAL 3: app with lights version 2
-Increase the total brightness of a 1x1 grid by 1; X
-Handle the ON/OFF/TOGGLE commands on a version 2 light. \ Launch a sequence of commands on a 1x1 grid and calculate the total brightness. X
-Send a sequence of commands on a 4x4 grid and calculate the total brightness. X
+Increase the total brightness of a 1x1 grid by 1; 
+Handle the ON/OFF/TOGGLE commands on a version 2 light. \ Launch a sequence of commands on a 1x1 grid and calculate the total brightness. 
+Send a sequence of commands on a 4x4 grid and calculate the total brightness. 
 Launch Santa's sequence and calculate the total brightness of the grid.
-
-### TODO
-
-### Notes 
-
-I don't need lightAction ojects anymore. I'm going to move the light action on the light object itself. 
-Grid.setLightStatus becomes Grid.launchCommandOnLights()
-Build a new CommandProcessor object. It parses the command sequence, for each command launches grid.launchCommandOnLights().
-Each Light object deals with the command. The method Light.setStatus becomes Light.execute(command). This way, in the next version of the app I have only to use a different Light object.
-
-Manager.getLightStatus should return the lights' status of the whole grid. Otherwise, I will receive a grid with status at different positions compared to the original grid.
-
-Total time spent: 18 pomodoros => 9h
-
-### Questions
-
-* In the early steps of the development of the app, seems convenient to just rely on end-to-end tests. If I develop each single part in TDD from step one, and I later discover that I need to change the architecture, introduce new objects or whatever, I need to change the tests as well. If I rely on end-to-end test I can modify the architecture more easily.
-How to deal with this problem?
