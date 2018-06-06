@@ -47,21 +47,22 @@ End to end tests for this version will use light_v2 objects, and will check thei
 
 ### GOAL 1: walking skeleton
 
-Write a 1x1 grid with a light. The grid creates itself. The light is off.
-Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
-Send the command sequence to the application, verify that the light status at pos [0, 0] is ON. 
+* Write a 1x1 grid with a light. The grid creates itself. The light is off.
+* Write a command sequence with 1 command. The command is from light at pos {0, 0} to light at pos {0, 0}. The command is 'ON'.
+* Send the command sequence to the application, verify that the light status at pos [0, 0] is ON. 
 
 ### GOAL 2: app with lights version 1
 
-Create a new object to deal with different type of commands. 
-Manage the TOGGLE case on a 1x1 grid. 
-Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. 
-Send an empty sequence of commands. 
-Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. 
-Launch Santa's sequence. 
+* Create a new object to deal with different type of commands. 
+* Manage the TOGGLE case on a 1x1 grid. 
+* Send a sequence of commands on a 1x1 grid, implement ON/OFF command cases on a 1x1 grid. 
+* Send an empty sequence of commands. 
+* Send a command on several lights on a 3x3 grid, such as TOGGLE 0,0 -> 2,2. \ Send a sequence of commands on a 4x4 grid. 
+* Launch Santa's sequence. 
 
 ### GOAL 3: app with lights version 2
-Increase the total brightness of a 1x1 grid by 1; 
-Handle the ON/OFF/TOGGLE commands on a version 2 light. \ Launch a sequence of commands on a 1x1 grid and calculate the total brightness. 
-Send a sequence of commands on a 4x4 grid and calculate the total brightness. 
-Launch Santa's sequence and calculate the total brightness of the grid.
+
+* Increase the total brightness of a 1x1 grid by 1; 
+* Handle the ON/OFF/TOGGLE commands on a version 2 light. \ Launch a sequence of commands on a 1x1 grid and calculate the total brightness. 
+* Send a sequence of commands on a 4x4 grid and calculate the total brightness. 
+* Launch Santa's sequence and calculate the total brightness of the grid.
